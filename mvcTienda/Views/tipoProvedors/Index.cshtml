@@ -1,0 +1,58 @@
+﻿@model IEnumerable<mvcTienda.tipoProvedor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ididusuarioCrea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idusuarioModifica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.provedor.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ididusuarioCrea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idusuarioModifica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.provedor.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idtipoProvedor }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idtipoProvedor }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idtipoProvedor })
+        </td>
+    </tr>
+}
+
+</table>

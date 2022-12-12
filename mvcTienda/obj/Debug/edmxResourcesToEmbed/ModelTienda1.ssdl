@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TiendaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="area">
+    <Key>
+      <PropertyRef Name="idarea" />
+    </Key>
+    <Property Name="idarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idtienda" Type="int" />
+  </EntityType>
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="idcategoria" />
+    </Key>
+    <Property Name="idcategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="idcliente" />
+    </Key>
+    <Property Name="idcliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidoP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidoM" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="edad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idtienda" Type="int" />
+  </EntityType>
+  <EntityType Name="compra">
+    <Key>
+      <PropertyRef Name="idcompra" />
+    </Key>
+    <Property Name="idcompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idcliente" Type="int" />
+  </EntityType>
+  <EntityType Name="cuenta">
+    <Key>
+      <PropertyRef Name="idcuenta" />
+    </Key>
+    <Property Name="idcuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="descuento">
+    <Key>
+      <PropertyRef Name="iddescuento" />
+    </Key>
+    <Property Name="iddescuento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descuento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="idempleado" />
+    </Key>
+    <Property Name="idempleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidoP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidoM" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idtienda" Type="int" />
+  </EntityType>
+  <EntityType Name="factura">
+    <Key>
+      <PropertyRef Name="idfactura" />
+    </Key>
+    <Property Name="idfactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="nombreCliente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idcliente" Type="int" />
+  </EntityType>
+  <EntityType Name="marca">
+    <Key>
+      <PropertyRef Name="idmarca" />
+    </Key>
+    <Property Name="idmarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="marketing">
+    <Key>
+      <PropertyRef Name="idmarketing" />
+    </Key>
+    <Property Name="idmarketing" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idtienda" Type="int" />
+  </EntityType>
+  <EntityType Name="nomina">
+    <Key>
+      <PropertyRef Name="idnomina" />
+    </Key>
+    <Property Name="idnomina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="orden">
+    <Key>
+      <PropertyRef Name="idorden" />
+    </Key>
+    <Property Name="idorden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="idproducto" />
+    </Key>
+    <Property Name="idproducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="detalles" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idtienda" Type="int" />
+  </EntityType>
+  <EntityType Name="promocion">
+    <Key>
+      <PropertyRef Name="idpromocion" />
+    </Key>
+    <Property Name="idpromocion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="provedor">
+    <Key>
+      <PropertyRef Name="idprovedor" />
+    </Key>
+    <Property Name="idprovedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="recibo">
+    <Key>
+      <PropertyRef Name="idrecibo" />
+    </Key>
+    <Property Name="idrecibo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="sucursal">
+    <Key>
+      <PropertyRef Name="idsucursal" />
+    </Key>
+    <Property Name="idsucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idtienda" Type="int" />
+  </EntityType>
+  <EntityType Name="tienda">
+    <Key>
+      <PropertyRef Name="idtienda" />
+    </Key>
+    <Property Name="idtienda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="tipoCuenta">
+    <Key>
+      <PropertyRef Name="idtipoCuenta" />
+    </Key>
+    <Property Name="idtipoCuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="ididusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="tipoEmpleado">
+    <Key>
+      <PropertyRef Name="idtipoEmpleado" />
+    </Key>
+    <Property Name="idtipoEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="tipoProvedor">
+    <Key>
+      <PropertyRef Name="idtipoProvedor" />
+    </Key>
+    <Property Name="idtipoProvedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="ididusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idprovedor" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidoP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellidoM" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estatus" Type="bit" />
+    <Property Name="idUsuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="idUsuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="venta">
+    <Key>
+      <PropertyRef Name="idventa" />
+    </Key>
+    <Property Name="idventa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="idusuarioCrea" Type="int" />
+    <Property Name="idusuarioModifica" Type="int" />
+    <Property Name="idtienda" Type="int" />
+  </EntityType>
+  <Association Name="FKareatienda">
+    <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+    <End Role="area" Type="Self.area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tienda">
+        <PropertyRef Name="idtienda" />
+      </Principal>
+      <Dependent Role="area">
+        <PropertyRef Name="idtienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKclientetienda">
+    <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+    <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tienda">
+        <PropertyRef Name="idtienda" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="idtienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKcompracliente">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="compra" Type="Self.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="idcliente" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="idcliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKempleadotienda">
+    <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+    <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tienda">
+        <PropertyRef Name="idtienda" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="idtienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKfacturacliente">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="factura" Type="Self.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="idcliente" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="idcliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKmarketingtienda">
+    <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+    <End Role="marketing" Type="Self.marketing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tienda">
+        <PropertyRef Name="idtienda" />
+      </Principal>
+      <Dependent Role="marketing">
+        <PropertyRef Name="idtienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKsucursaltienda">
+    <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+    <End Role="sucursal" Type="Self.sucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tienda">
+        <PropertyRef Name="idtienda" />
+      </Principal>
+      <Dependent Role="sucursal">
+        <PropertyRef Name="idtienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKtipoProvedorprovedor">
+    <End Role="provedor" Type="Self.provedor" Multiplicity="0..1" />
+    <End Role="tipoProvedor" Type="Self.tipoProvedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provedor">
+        <PropertyRef Name="idprovedor" />
+      </Principal>
+      <Dependent Role="tipoProvedor">
+        <PropertyRef Name="idprovedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKventatienda">
+    <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+    <End Role="venta" Type="Self.venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tienda">
+        <PropertyRef Name="idtienda" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="idtienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TiendaModelStoreContainer">
+    <EntitySet Name="area" EntityType="Self.area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cuenta" EntityType="Self.cuenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="descuento" EntityType="Self.descuento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="factura" EntityType="Self.factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="marca" EntityType="Self.marca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="marketing" EntityType="Self.marketing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nomina" EntityType="Self.nomina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orden" EntityType="Self.orden" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="promocion" EntityType="Self.promocion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="provedor" EntityType="Self.provedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="recibo" EntityType="Self.recibo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tienda" EntityType="Self.tienda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipoCuenta" EntityType="Self.tipoCuenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipoEmpleado" EntityType="Self.tipoEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipoProvedor" EntityType="Self.tipoProvedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="venta" EntityType="Self.venta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FKareatienda" Association="Self.FKareatienda">
+      <End Role="tienda" EntitySet="tienda" />
+      <End Role="area" EntitySet="area" />
+    </AssociationSet>
+    <AssociationSet Name="FKclientetienda" Association="Self.FKclientetienda">
+      <End Role="tienda" EntitySet="tienda" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FKcompracliente" Association="Self.FKcompracliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="FKempleadotienda" Association="Self.FKempleadotienda">
+      <End Role="tienda" EntitySet="tienda" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKfacturacliente" Association="Self.FKfacturacliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="FKmarketingtienda" Association="Self.FKmarketingtienda">
+      <End Role="tienda" EntitySet="tienda" />
+      <End Role="marketing" EntitySet="marketing" />
+    </AssociationSet>
+    <AssociationSet Name="FKsucursaltienda" Association="Self.FKsucursaltienda">
+      <End Role="tienda" EntitySet="tienda" />
+      <End Role="sucursal" EntitySet="sucursal" />
+    </AssociationSet>
+    <AssociationSet Name="FKtipoProvedorprovedor" Association="Self.FKtipoProvedorprovedor">
+      <End Role="provedor" EntitySet="provedor" />
+      <End Role="tipoProvedor" EntitySet="tipoProvedor" />
+    </AssociationSet>
+    <AssociationSet Name="FKventatienda" Association="Self.FKventatienda">
+      <End Role="tienda" EntitySet="tienda" />
+      <End Role="venta" EntitySet="venta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

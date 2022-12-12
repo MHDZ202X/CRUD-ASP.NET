@@ -1,0 +1,76 @@
+﻿@model IEnumerable<mvcTienda.producto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.detalles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idusuarioCrea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idusuarioModifica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idtienda)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.detalles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idusuarioCrea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idusuarioModifica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idtienda)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idproducto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idproducto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idproducto })
+        </td>
+    </tr>
+}
+
+</table>

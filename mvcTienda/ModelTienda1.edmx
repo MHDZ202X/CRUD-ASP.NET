@@ -1,0 +1,1204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TiendaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="idarea" />
+          </Key>
+          <Property Name="idarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idtienda" Type="int" />
+        </EntityType>
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="idcategoria" />
+          </Key>
+          <Property Name="idcategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="idcliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="edad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idtienda" Type="int" />
+        </EntityType>
+        <EntityType Name="compra">
+          <Key>
+            <PropertyRef Name="idcompra" />
+          </Key>
+          <Property Name="idcompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idcliente" Type="int" />
+        </EntityType>
+        <EntityType Name="cuenta">
+          <Key>
+            <PropertyRef Name="idcuenta" />
+          </Key>
+          <Property Name="idcuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="descuento">
+          <Key>
+            <PropertyRef Name="iddescuento" />
+          </Key>
+          <Property Name="iddescuento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descuento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="empleado">
+          <Key>
+            <PropertyRef Name="idempleado" />
+          </Key>
+          <Property Name="idempleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idtienda" Type="int" />
+        </EntityType>
+        <EntityType Name="factura">
+          <Key>
+            <PropertyRef Name="idfactura" />
+          </Key>
+          <Property Name="idfactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="nombreCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idcliente" Type="int" />
+        </EntityType>
+        <EntityType Name="marca">
+          <Key>
+            <PropertyRef Name="idmarca" />
+          </Key>
+          <Property Name="idmarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="marketing">
+          <Key>
+            <PropertyRef Name="idmarketing" />
+          </Key>
+          <Property Name="idmarketing" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idtienda" Type="int" />
+        </EntityType>
+        <EntityType Name="nomina">
+          <Key>
+            <PropertyRef Name="idnomina" />
+          </Key>
+          <Property Name="idnomina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="orden">
+          <Key>
+            <PropertyRef Name="idorden" />
+          </Key>
+          <Property Name="idorden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="idproducto" />
+          </Key>
+          <Property Name="idproducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="precio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="detalles" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cantidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idtienda" Type="int" />
+        </EntityType>
+        <EntityType Name="promocion">
+          <Key>
+            <PropertyRef Name="idpromocion" />
+          </Key>
+          <Property Name="idpromocion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="provedor">
+          <Key>
+            <PropertyRef Name="idprovedor" />
+          </Key>
+          <Property Name="idprovedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="recibo">
+          <Key>
+            <PropertyRef Name="idrecibo" />
+          </Key>
+          <Property Name="idrecibo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="sucursal">
+          <Key>
+            <PropertyRef Name="idsucursal" />
+          </Key>
+          <Property Name="idsucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idtienda" Type="int" />
+        </EntityType>
+        <EntityType Name="tienda">
+          <Key>
+            <PropertyRef Name="idtienda" />
+          </Key>
+          <Property Name="idtienda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="tipoCuenta">
+          <Key>
+            <PropertyRef Name="idtipoCuenta" />
+          </Key>
+          <Property Name="idtipoCuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="ididusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="tipoEmpleado">
+          <Key>
+            <PropertyRef Name="idtipoEmpleado" />
+          </Key>
+          <Property Name="idtipoEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="tipoProvedor">
+          <Key>
+            <PropertyRef Name="idtipoProvedor" />
+          </Key>
+          <Property Name="idtipoProvedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="ididusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idprovedor" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="bit" />
+          <Property Name="idUsuarioCrea" Type="int" />
+          <Property Name="fechaCrea" Type="datetime" />
+          <Property Name="idUsuarioModifica" Type="int" />
+          <Property Name="fechaModifica" Type="datetime" />
+        </EntityType>
+        <EntityType Name="venta">
+          <Key>
+            <PropertyRef Name="idventa" />
+          </Key>
+          <Property Name="idventa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idusuarioCrea" Type="int" />
+          <Property Name="idusuarioModifica" Type="int" />
+          <Property Name="idtienda" Type="int" />
+        </EntityType>
+        <Association Name="FKareatienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="area" Type="Self.area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKclientetienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKcompracliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="compra" Type="Self.compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="compra">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKempleadotienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="empleado">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKfacturacliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="factura" Type="Self.factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="factura">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKmarketingtienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="marketing" Type="Self.marketing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="marketing">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKsucursaltienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="sucursal" Type="Self.sucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="sucursal">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKtipoProvedorprovedor">
+          <End Role="provedor" Type="Self.provedor" Multiplicity="0..1" />
+          <End Role="tipoProvedor" Type="Self.tipoProvedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="provedor">
+              <PropertyRef Name="idprovedor" />
+            </Principal>
+            <Dependent Role="tipoProvedor">
+              <PropertyRef Name="idprovedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKventatienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="venta" Type="Self.venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TiendaModelStoreContainer">
+          <EntitySet Name="area" EntityType="Self.area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="compra" EntityType="Self.compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cuenta" EntityType="Self.cuenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="descuento" EntityType="Self.descuento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="factura" EntityType="Self.factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marca" EntityType="Self.marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marketing" EntityType="Self.marketing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nomina" EntityType="Self.nomina" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orden" EntityType="Self.orden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="promocion" EntityType="Self.promocion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="provedor" EntityType="Self.provedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="recibo" EntityType="Self.recibo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tienda" EntityType="Self.tienda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoCuenta" EntityType="Self.tipoCuenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoEmpleado" EntityType="Self.tipoEmpleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoProvedor" EntityType="Self.tipoProvedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="venta" EntityType="Self.venta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FKareatienda" Association="Self.FKareatienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="area" EntitySet="area" />
+          </AssociationSet>
+          <AssociationSet Name="FKclientetienda" Association="Self.FKclientetienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FKcompracliente" Association="Self.FKcompracliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="compra" EntitySet="compra" />
+          </AssociationSet>
+          <AssociationSet Name="FKempleadotienda" Association="Self.FKempleadotienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="empleado" EntitySet="empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FKfacturacliente" Association="Self.FKfacturacliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="factura" EntitySet="factura" />
+          </AssociationSet>
+          <AssociationSet Name="FKmarketingtienda" Association="Self.FKmarketingtienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="marketing" EntitySet="marketing" />
+          </AssociationSet>
+          <AssociationSet Name="FKsucursaltienda" Association="Self.FKsucursaltienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="sucursal" EntitySet="sucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FKtipoProvedorprovedor" Association="Self.FKtipoProvedorprovedor">
+            <End Role="provedor" EntitySet="provedor" />
+            <End Role="tipoProvedor" EntitySet="tipoProvedor" />
+          </AssociationSet>
+          <AssociationSet Name="FKventatienda" Association="Self.FKventatienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="venta" EntitySet="venta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TiendaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="idarea" />
+          </Key>
+          <Property Name="idarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idtienda" Type="Int32" />
+          <NavigationProperty Name="tienda" Relationship="Self.FKareatienda" FromRole="area" ToRole="tienda" />
+        </EntityType>
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="idcategoria" />
+          </Key>
+          <Property Name="idcategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="idcliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="edad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idtienda" Type="Int32" />
+          <NavigationProperty Name="tienda" Relationship="Self.FKclientetienda" FromRole="cliente" ToRole="tienda" />
+          <NavigationProperty Name="compra" Relationship="Self.FKcompracliente" FromRole="cliente" ToRole="compra" />
+          <NavigationProperty Name="factura" Relationship="Self.FKfacturacliente" FromRole="cliente" ToRole="factura" />
+        </EntityType>
+        <EntityType Name="compra">
+          <Key>
+            <PropertyRef Name="idcompra" />
+          </Key>
+          <Property Name="idcompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idcliente" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.FKcompracliente" FromRole="compra" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="cuenta">
+          <Key>
+            <PropertyRef Name="idcuenta" />
+          </Key>
+          <Property Name="idcuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="descuento">
+          <Key>
+            <PropertyRef Name="iddescuento" />
+          </Key>
+          <Property Name="iddescuento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descuento1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="empleado">
+          <Key>
+            <PropertyRef Name="idempleado" />
+          </Key>
+          <Property Name="idempleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idtienda" Type="Int32" />
+          <NavigationProperty Name="tienda" Relationship="Self.FKempleadotienda" FromRole="empleado" ToRole="tienda" />
+        </EntityType>
+        <EntityType Name="factura">
+          <Key>
+            <PropertyRef Name="idfactura" />
+          </Key>
+          <Property Name="idfactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="nombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idcliente" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.FKfacturacliente" FromRole="factura" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="marca">
+          <Key>
+            <PropertyRef Name="idmarca" />
+          </Key>
+          <Property Name="idmarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="marketing">
+          <Key>
+            <PropertyRef Name="idmarketing" />
+          </Key>
+          <Property Name="idmarketing" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idtienda" Type="Int32" />
+          <NavigationProperty Name="tienda" Relationship="Self.FKmarketingtienda" FromRole="marketing" ToRole="tienda" />
+        </EntityType>
+        <EntityType Name="nomina">
+          <Key>
+            <PropertyRef Name="idnomina" />
+          </Key>
+          <Property Name="idnomina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="orden">
+          <Key>
+            <PropertyRef Name="idorden" />
+          </Key>
+          <Property Name="idorden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="idproducto" />
+          </Key>
+          <Property Name="idproducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="detalles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cantidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idtienda" Type="Int32" />
+        </EntityType>
+        <EntityType Name="promocion">
+          <Key>
+            <PropertyRef Name="idpromocion" />
+          </Key>
+          <Property Name="idpromocion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="provedor">
+          <Key>
+            <PropertyRef Name="idprovedor" />
+          </Key>
+          <Property Name="idprovedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <NavigationProperty Name="tipoProvedor" Relationship="Self.FKtipoProvedorprovedor" FromRole="provedor" ToRole="tipoProvedor" />
+        </EntityType>
+        <EntityType Name="recibo">
+          <Key>
+            <PropertyRef Name="idrecibo" />
+          </Key>
+          <Property Name="idrecibo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sucursal">
+          <Key>
+            <PropertyRef Name="idsucursal" />
+          </Key>
+          <Property Name="idsucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idtienda" Type="Int32" />
+          <NavigationProperty Name="tienda" Relationship="Self.FKsucursaltienda" FromRole="sucursal" ToRole="tienda" />
+        </EntityType>
+        <EntityType Name="tienda">
+          <Key>
+            <PropertyRef Name="idtienda" />
+          </Key>
+          <Property Name="idtienda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <NavigationProperty Name="area" Relationship="Self.FKareatienda" FromRole="tienda" ToRole="area" />
+          <NavigationProperty Name="cliente" Relationship="Self.FKclientetienda" FromRole="tienda" ToRole="cliente" />
+          <NavigationProperty Name="empleado" Relationship="Self.FKempleadotienda" FromRole="tienda" ToRole="empleado" />
+          <NavigationProperty Name="marketing" Relationship="Self.FKmarketingtienda" FromRole="tienda" ToRole="marketing" />
+          <NavigationProperty Name="sucursal" Relationship="Self.FKsucursaltienda" FromRole="tienda" ToRole="sucursal" />
+          <NavigationProperty Name="venta" Relationship="Self.FKventatienda" FromRole="tienda" ToRole="venta" />
+        </EntityType>
+        <EntityType Name="tipoCuenta">
+          <Key>
+            <PropertyRef Name="idtipoCuenta" />
+          </Key>
+          <Property Name="idtipoCuenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="ididusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tipoEmpleado">
+          <Key>
+            <PropertyRef Name="idtipoEmpleado" />
+          </Key>
+          <Property Name="idtipoEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tipoProvedor">
+          <Key>
+            <PropertyRef Name="idtipoProvedor" />
+          </Key>
+          <Property Name="idtipoProvedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="ididusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idprovedor" Type="Int32" />
+          <NavigationProperty Name="provedor" Relationship="Self.FKtipoProvedorprovedor" FromRole="tipoProvedor" ToRole="provedor" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="Boolean" />
+          <Property Name="idUsuarioCrea" Type="Int32" />
+          <Property Name="fechaCrea" Type="DateTime" Precision="3" />
+          <Property Name="idUsuarioModifica" Type="Int32" />
+          <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="venta">
+          <Key>
+            <PropertyRef Name="idventa" />
+          </Key>
+          <Property Name="idventa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idusuarioCrea" Type="Int32" />
+          <Property Name="idusuarioModifica" Type="Int32" />
+          <Property Name="idtienda" Type="Int32" />
+          <NavigationProperty Name="tienda" Relationship="Self.FKventatienda" FromRole="venta" ToRole="tienda" />
+        </EntityType>
+        <Association Name="FKareatienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="area" Type="Self.area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKclientetienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKcompracliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="compra" Type="Self.compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="compra">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKfacturacliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="factura" Type="Self.factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idcliente" />
+            </Principal>
+            <Dependent Role="factura">
+              <PropertyRef Name="idcliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKempleadotienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="empleado">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKmarketingtienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="marketing" Type="Self.marketing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="marketing">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKtipoProvedorprovedor">
+          <End Role="provedor" Type="Self.provedor" Multiplicity="0..1" />
+          <End Role="tipoProvedor" Type="Self.tipoProvedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="provedor">
+              <PropertyRef Name="idprovedor" />
+            </Principal>
+            <Dependent Role="tipoProvedor">
+              <PropertyRef Name="idprovedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKsucursaltienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="sucursal" Type="Self.sucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="sucursal">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKventatienda">
+          <End Role="tienda" Type="Self.tienda" Multiplicity="0..1" />
+          <End Role="venta" Type="Self.venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tienda">
+              <PropertyRef Name="idtienda" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="idtienda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TiendaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="area" EntityType="Self.area" />
+          <EntitySet Name="categoria" EntityType="Self.categoria" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" />
+          <EntitySet Name="compra" EntityType="Self.compra" />
+          <EntitySet Name="cuenta" EntityType="Self.cuenta" />
+          <EntitySet Name="descuento" EntityType="Self.descuento" />
+          <EntitySet Name="empleado" EntityType="Self.empleado" />
+          <EntitySet Name="factura" EntityType="Self.factura" />
+          <EntitySet Name="marca" EntityType="Self.marca" />
+          <EntitySet Name="marketing" EntityType="Self.marketing" />
+          <EntitySet Name="nomina" EntityType="Self.nomina" />
+          <EntitySet Name="orden" EntityType="Self.orden" />
+          <EntitySet Name="producto" EntityType="Self.producto" />
+          <EntitySet Name="promocion" EntityType="Self.promocion" />
+          <EntitySet Name="provedor" EntityType="Self.provedor" />
+          <EntitySet Name="recibo" EntityType="Self.recibo" />
+          <EntitySet Name="sucursal" EntityType="Self.sucursal" />
+          <EntitySet Name="tienda" EntityType="Self.tienda" />
+          <EntitySet Name="tipoCuenta" EntityType="Self.tipoCuenta" />
+          <EntitySet Name="tipoEmpleado" EntityType="Self.tipoEmpleado" />
+          <EntitySet Name="tipoProvedor" EntityType="Self.tipoProvedor" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="venta" EntityType="Self.venta" />
+          <AssociationSet Name="FKareatienda" Association="Self.FKareatienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="area" EntitySet="area" />
+          </AssociationSet>
+          <AssociationSet Name="FKclientetienda" Association="Self.FKclientetienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FKcompracliente" Association="Self.FKcompracliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="compra" EntitySet="compra" />
+          </AssociationSet>
+          <AssociationSet Name="FKfacturacliente" Association="Self.FKfacturacliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="factura" EntitySet="factura" />
+          </AssociationSet>
+          <AssociationSet Name="FKempleadotienda" Association="Self.FKempleadotienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="empleado" EntitySet="empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FKmarketingtienda" Association="Self.FKmarketingtienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="marketing" EntitySet="marketing" />
+          </AssociationSet>
+          <AssociationSet Name="FKtipoProvedorprovedor" Association="Self.FKtipoProvedorprovedor">
+            <End Role="provedor" EntitySet="provedor" />
+            <End Role="tipoProvedor" EntitySet="tipoProvedor" />
+          </AssociationSet>
+          <AssociationSet Name="FKsucursaltienda" Association="Self.FKsucursaltienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="sucursal" EntitySet="sucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FKventatienda" Association="Self.FKventatienda">
+            <End Role="tienda" EntitySet="tienda" />
+            <End Role="venta" EntitySet="venta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TiendaModelStoreContainer" CdmEntityContainer="TiendaEntities">
+          <EntitySetMapping Name="area">
+            <EntityTypeMapping TypeName="TiendaModel.area">
+              <MappingFragment StoreEntitySet="area">
+                <ScalarProperty Name="idarea" ColumnName="idarea" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categoria">
+            <EntityTypeMapping TypeName="TiendaModel.categoria">
+              <MappingFragment StoreEntitySet="categoria">
+                <ScalarProperty Name="idcategoria" ColumnName="idcategoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="TiendaModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidoP" ColumnName="apellidoP" />
+                <ScalarProperty Name="apellidoM" ColumnName="apellidoM" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="compra">
+            <EntityTypeMapping TypeName="TiendaModel.compra">
+              <MappingFragment StoreEntitySet="compra">
+                <ScalarProperty Name="idcompra" ColumnName="idcompra" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cuenta">
+            <EntityTypeMapping TypeName="TiendaModel.cuenta">
+              <MappingFragment StoreEntitySet="cuenta">
+                <ScalarProperty Name="idcuenta" ColumnName="idcuenta" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="descuento">
+            <EntityTypeMapping TypeName="TiendaModel.descuento">
+              <MappingFragment StoreEntitySet="descuento">
+                <ScalarProperty Name="iddescuento" ColumnName="iddescuento" />
+                <ScalarProperty Name="descuento1" ColumnName="descuento" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empleado">
+            <EntityTypeMapping TypeName="TiendaModel.empleado">
+              <MappingFragment StoreEntitySet="empleado">
+                <ScalarProperty Name="idempleado" ColumnName="idempleado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidoP" ColumnName="apellidoP" />
+                <ScalarProperty Name="apellidoM" ColumnName="apellidoM" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="factura">
+            <EntityTypeMapping TypeName="TiendaModel.factura">
+              <MappingFragment StoreEntitySet="factura">
+                <ScalarProperty Name="idfactura" ColumnName="idfactura" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="marca">
+            <EntityTypeMapping TypeName="TiendaModel.marca">
+              <MappingFragment StoreEntitySet="marca">
+                <ScalarProperty Name="idmarca" ColumnName="idmarca" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="marketing">
+            <EntityTypeMapping TypeName="TiendaModel.marketing">
+              <MappingFragment StoreEntitySet="marketing">
+                <ScalarProperty Name="idmarketing" ColumnName="idmarketing" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nomina">
+            <EntityTypeMapping TypeName="TiendaModel.nomina">
+              <MappingFragment StoreEntitySet="nomina">
+                <ScalarProperty Name="idnomina" ColumnName="idnomina" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orden">
+            <EntityTypeMapping TypeName="TiendaModel.orden">
+              <MappingFragment StoreEntitySet="orden">
+                <ScalarProperty Name="idorden" ColumnName="idorden" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="producto">
+            <EntityTypeMapping TypeName="TiendaModel.producto">
+              <MappingFragment StoreEntitySet="producto">
+                <ScalarProperty Name="idproducto" ColumnName="idproducto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="detalles" ColumnName="detalles" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="promocion">
+            <EntityTypeMapping TypeName="TiendaModel.promocion">
+              <MappingFragment StoreEntitySet="promocion">
+                <ScalarProperty Name="idpromocion" ColumnName="idpromocion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="provedor">
+            <EntityTypeMapping TypeName="TiendaModel.provedor">
+              <MappingFragment StoreEntitySet="provedor">
+                <ScalarProperty Name="idprovedor" ColumnName="idprovedor" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="recibo">
+            <EntityTypeMapping TypeName="TiendaModel.recibo">
+              <MappingFragment StoreEntitySet="recibo">
+                <ScalarProperty Name="idrecibo" ColumnName="idrecibo" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sucursal">
+            <EntityTypeMapping TypeName="TiendaModel.sucursal">
+              <MappingFragment StoreEntitySet="sucursal">
+                <ScalarProperty Name="idsucursal" ColumnName="idsucursal" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tienda">
+            <EntityTypeMapping TypeName="TiendaModel.tienda">
+              <MappingFragment StoreEntitySet="tienda">
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoCuenta">
+            <EntityTypeMapping TypeName="TiendaModel.tipoCuenta">
+              <MappingFragment StoreEntitySet="tipoCuenta">
+                <ScalarProperty Name="idtipoCuenta" ColumnName="idtipoCuenta" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="ididusuarioCrea" ColumnName="ididusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoEmpleado">
+            <EntityTypeMapping TypeName="TiendaModel.tipoEmpleado">
+              <MappingFragment StoreEntitySet="tipoEmpleado">
+                <ScalarProperty Name="idtipoEmpleado" ColumnName="idtipoEmpleado" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoProvedor">
+            <EntityTypeMapping TypeName="TiendaModel.tipoProvedor">
+              <MappingFragment StoreEntitySet="tipoProvedor">
+                <ScalarProperty Name="idtipoProvedor" ColumnName="idtipoProvedor" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="ididusuarioCrea" ColumnName="ididusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idprovedor" ColumnName="idprovedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="TiendaModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidoP" ColumnName="apellidoP" />
+                <ScalarProperty Name="apellidoM" ColumnName="apellidoM" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="idUsuarioCrea" ColumnName="idUsuarioCrea" />
+                <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+                <ScalarProperty Name="idUsuarioModifica" ColumnName="idUsuarioModifica" />
+                <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="venta">
+            <EntityTypeMapping TypeName="TiendaModel.venta">
+              <MappingFragment StoreEntitySet="venta">
+                <ScalarProperty Name="idventa" ColumnName="idventa" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idusuarioCrea" ColumnName="idusuarioCrea" />
+                <ScalarProperty Name="idusuarioModifica" ColumnName="idusuarioModifica" />
+                <ScalarProperty Name="idtienda" ColumnName="idtienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
